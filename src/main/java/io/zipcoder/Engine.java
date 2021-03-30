@@ -14,6 +14,10 @@ public class Engine {
                 continue;
             }
         }
+        boolean outerValidInput = false;
+        while(!outerValidInput){
+            outerValidInput = io.sorter();
+        }
         io.output();
     }
 

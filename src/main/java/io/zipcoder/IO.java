@@ -1,5 +1,7 @@
 package io.zipcoder;
 
+import java.util.Arrays;
+
 public class IO {
 
     Pet[] pets;
@@ -41,6 +43,19 @@ public class IO {
 
     public String takeName(String animal){
         return Console.getStringInput("What's your " + animal + "'s name?");
+    }
+
+    public boolean sorter(){
+        int input = Console.getIntegerInput("Enter 1 to sort by name, 2 to sort by type.");
+        if(input == 1){
+            Arrays.sort(this.pets, new PetCompareByName());
+            return true;
+        }
+        else if(input == 2){
+            Arrays.sort(this.pets, new PetCompareByType());
+            return true;
+        }
+        return false;
     }
 
     public void output(){
